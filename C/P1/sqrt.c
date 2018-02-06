@@ -12,7 +12,7 @@ int raiz_de_9()
 int raiz_de_4()
 {
 
-  printf("A raiz quadrada de 4 é: %d\n",(int) sqrt(4));
+  printf("A raiz quadrada de 4 é: %d\n",(int) sqrt(4)); // (ou %f) e (.0 -> para tirar virgulas)
   raiz_de_9();
 
 }
