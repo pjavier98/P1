@@ -6,7 +6,7 @@
 int main() {
     int cod,quant;
     float compra;
-    scanf("%d\n%d",&cod,&quant);
+    scanf("%d %d",&cod,&quant);
 
     if(cod==1)
         {
