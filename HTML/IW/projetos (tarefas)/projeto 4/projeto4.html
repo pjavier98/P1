@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+	<title> Proclamador da república </title>
+</head>
+<script language="javascript">
+	function presidente() {
+		var entrada = document.forms[0].Marechal.value;
+		alert("Você digitou: "+entrada + ". Quem proclamou a república foi Marechal Deodoro");
+	}
+</script>
+<body>
+<form name="Marechal">
+	Insira o sobrenome do Marechal que proclamou a república:<br>
+	<input type="text" name = "Marechal">
+	<input type="button" name="traitement" value="Verificar" onclick="presidente()">
+</form>
+</body>
+</html>
