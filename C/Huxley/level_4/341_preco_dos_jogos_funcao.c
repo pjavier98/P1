@@ -5,7 +5,7 @@ void game(int dificuldade, double preco) {
 	scanf("%d",&jogos);
 	for(;jogos>=1;cont++) {
         scanf("%d%lf",&dificuldade,&preco);
-		if(preco<=100 && preco>60) {
+		if(preco<=100 && preco>=53) {
 			if ( dificuldade == 0) {
 			preco = preco*pow(0.875,3);
 			}
