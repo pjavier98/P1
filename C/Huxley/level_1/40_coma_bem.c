@@ -3,9 +3,13 @@
 #include <math.h>
 #include <stdlib.h>
 
+float conta(int gasto) {
+	return (gasto+gasto*0.1);
+}
 int main() {
-    float conta;         //conta + conta*10%
-    scanf("%f",&conta);
-    printf("%.2f",conta*0.1+conta);
+	int gasto;
+	scanf("%d",&gasto);
+
+	printf("%.2f\n", conta(gasto));
 	return 0;
 }
