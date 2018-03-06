@@ -1,25 +1,31 @@
 #include <stdio.h>
 int quadrado(int lado1, int lado2, int laje)
 {
-   	int altura = 0, largura = 0;
-    if (n % a == 0) 
-    {
-        largura = (lado1 / laje);
-    } 
-  	else 
-    {
-        largura = ((lado1 / laje) + 1);
-    }
-		if(lado2 % laje == 0) 
-    { 
-        altura = (lado2 / laje);
-    }
-  	else 
-    {
-       	altura = ((laje / laje) + 1);
-    }
-  	return altura * largura;
+  int altura = 0, largura = 0;
+  
+  if (n % a == 0) 
+  {
+    largura = (lado1 / laje);
+  } 
+  
+  else 
+  {
+    largura = ((lado1 / laje) + 1);
+  }
+  
+  if(lado2 % laje == 0) 
+  { 
+    altura = (lado2 / laje);
+  }
+  
+  else 
+  {
+    altura = ((laje / laje) + 1);
+  }
+  
+  return altura * largura;
 }
+
 int main() 
 {
 	int lado1, lado2, laje;
