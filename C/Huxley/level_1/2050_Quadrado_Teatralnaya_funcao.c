@@ -3,7 +3,7 @@ int quadrado(int lado1, int lado2, int laje)
 {
   int altura = 0, largura = 0;
   
-  if (n % a == 0) 
+  if (lado1 % laje == 0) 
   {
     largura = (lado1 / laje);
   } 
@@ -20,7 +20,7 @@ int quadrado(int lado1, int lado2, int laje)
   
   else 
   {
-    altura = ((laje / laje) + 1);
+    altura = ((lado2 / laje) + 1);
   }
   
   return altura * largura;
@@ -28,9 +28,9 @@ int quadrado(int lado1, int lado2, int laje)
 
 int main() 
 {
-	int lado1, lado2, laje;
-	
-	scanf("%d %d %d", &lado1, &lado2, &laje);
-	
-	printf("%d",quadrado(lado1, lado2, laje));
+  int lado1, lado2, laje;
+  
+  scanf("%d %d %d", &lado1, &lado2, &laje);
+  
+  printf("%d",quadrado(lado1, lado2, laje));
 }
