@@ -73,6 +73,6 @@ int main() {
     }
 	printf("%d\n",max);
 }
->>>>>>> 34211edd2012617ddcbe238c310b6896784bc516
+
 return 0;
 }
