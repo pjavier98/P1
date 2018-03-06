@@ -1,28 +1,30 @@
 #include <stdio.h>
-int quadrado(int n, int m, int a)
+int quadrado(int lado1, int lado2, int laje)
 {
    	int altura = 0, largura = 0;
     if (n % a == 0) 
     {
-        largura = (n / a);
+        largura = (lado1 / laje);
     } 
   	else 
     {
-        largura = ((n/a) + 1);
+        largura = ((lado1 / laje) + 1);
     }
-		if(m % a == 0) 
+		if(lado2 % laje == 0) 
     { 
-        altura = (m/a);
+        altura = (lado2 / laje);
     }
   	else 
     {
-       	altura = ((m/a) + 1);
+       	altura = ((laje / laje) + 1);
     }
   	return altura * largura;
 }
 int main() 
 {
-	int n,m,a;    // n -> lado do retangulo  m -> lado do retangulo  a- > lado da laje
-	scanf("%d %d %d", &n, &m, &a);
-	printf("%d",quadrado(n,m,a));
+	int lado1, lado2, laje;
+	
+	scanf("%d %d %d", &lado1, &lado2, &laje);
+	
+	printf("%d",quadrado(lado1, lado2, laje));
 }
