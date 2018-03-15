@@ -1,14 +1,14 @@
 #include <stdio.h>
 
-void ordenar(int *a, int *b) //desse jeito esta dando errado é pra fazer as tres comparações aqui é?
+void ordenar(int *x, int *y) //desse jeito esta dando errado é pra fazer as tres comparações aqui é?
 {	
 	int temp;
 
-	if (*a > *b)
+	if (*x > *y)
 	{
-		temp = *a;
-		*a = *b;
-		*b = temp;
+		temp = *x;
+		*x = *y;
+		*y = temp;
 	} 
 
 }
