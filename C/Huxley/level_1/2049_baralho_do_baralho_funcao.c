@@ -1,8 +1,16 @@
+<<<<<<< HEAD
 /*A pontua??o no jogo come?a com 0 e vai sendo acumulada:
 + N?mero da menor carta, se estiverem em ordem crescente com dist?ncia 1;
 + N?mero da menor carta, se todas forem iguais;
 + N?mero da menor carta / 2, se existirem apenas duas menores cartas iguais;
 + N?mero da maior carta / 2, se existirem apenas duas maiores cartas iguais;
+=======
+/*A pontua��o no jogo come�a com 0 e vai sendo acumulada:
++ N�mero da menor carta, se estiverem em ordem crescente com dist�ncia 1;
++ N�mero da menor carta, se todas forem iguais;
++ N�mero da menor carta / 2, se existirem apenas duas menores cartas iguais;
++ N�mero da maior carta / 2, se existirem apenas duas maiores cartas iguais;
+>>>>>>> 98319c50d58bb05d0ddc8cf330fb4a3aab9221b2
 + 8, se a soma das cartas for 8*/
 
 #include <stdio.h>
@@ -66,7 +74,11 @@ int pontos(int carta1, int carta2, int carta3)
 
 int baralho() 
 {
+<<<<<<< HEAD
 	int carta1, carta2, carta3;
+=======
+	int carta1, int carta2, int carta3;
+>>>>>>> 98319c50d58bb05d0ddc8cf330fb4a3aab9221b2
 
 	int paes;
 	int willy;
@@ -100,4 +112,8 @@ int baralho()
 int main() 
 {
 	printf("%d\n", baralho());
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98319c50d58bb05d0ddc8cf330fb4a3aab9221b2

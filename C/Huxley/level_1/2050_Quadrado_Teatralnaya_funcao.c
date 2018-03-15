@@ -27,4 +27,8 @@ int main()
   int qLado2 = quadrado(lado2, laje);
 
   printf("%d", qLado1 * qLado2);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 98319c50d58bb05d0ddc8cf330fb4a3aab9221b2
