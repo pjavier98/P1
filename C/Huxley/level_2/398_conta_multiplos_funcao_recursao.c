@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 int ordenar(int *x, int *y)
 {
 	int temp;
@@ -11,33 +12,44 @@ int ordenar(int *x, int *y)
 	}
 }
 
-void contador(int num1, int num2, int multiplo)
+int contador(int num1, int num2, int temp, int mult)
 {	
-	int cont;
-
-	if(multiplo <= num2)
+	if (mult >= 50)
 	{
-	    return;
+	    if(num2 % num1 == 0)
+	    {
+		    return temp + 1;
+	    }
+	    else
+	    {
+	        return temp;
+	    }
 	}
-	if(multiplo % num1 == 0 && multiplo % num2 == 0)
+    
+	if ((mult % num1 == 0) && (mult % num2 == 0))
 	{
-		cont++;
+		temp += 1;
 	}
-	contador(num1, num2, multiplo-1);
-	printf("%d\n", cont);
+	
+	contador(num1, num2, temp, mult + 1);
 }
 
 int main()
 {
-	int numero1, numero2, multiplo;
-
-	multiplo = 50;
+	int numero1, numero2, temporal, multiplo;
 
 	scanf("%d %d", &numero1, &numero2);
+
+	temporal = 0;
+	
+	if (numero1 * numero2 < 50)
+	{
+		multiplo = numero1 * numero2;
+	}
 	
 	ordenar(&numero1, &numero2);
-
-	contador (numero1, numero2, multiplo);	
 	
+	printf("%d",contador(numero1, numero2, temporal, multiplo));
+
 	return 0;
 }

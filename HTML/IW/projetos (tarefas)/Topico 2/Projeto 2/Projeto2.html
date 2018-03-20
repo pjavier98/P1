@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8">
+<head>
+
+	<title> Area do triangulo </title>
+
+</head>
+<script language="javascript">
+	function area_triangulo()
+	{
+		lado_1 = prompt("Digite aqui o tamanho do primeiro lado:","")
+		lado_2 = prompt("Digite aqui o tamanho do segundo lado:","")
+		lado_3 = prompt("Digite aqui o tamanho do terceiro lado lado:","")
+		
+		l1 = parseInt(lado_1)
+		l2 = parseInt(lado_2)
+		l3 = parseInt(lado_3)
+
+		T = (l1 + l2 + l3) / 2
+		alert(T)
+
+		area = Math.sqrt(T * (T - l1) * (T - l2) * (T - l3)) 
+
+		alert("A area do triangulo é igual a: "+area)
+	}
+</script>
+<body>
+	<form>
+		<input type="button" name="area" value="Area de qualquer triangulo" onclick="area_triangulo()">
+	</form>
+</body>
+</html>
