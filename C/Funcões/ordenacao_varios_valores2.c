@@ -1,5 +1,10 @@
 #include <stdio.h>
 
+void imprimir(int n1, int n2, int n3, int n4, int n5)
+{
+	printf("%d %d %d %d %d\n", n1, n2, n3, n4, n5);
+}
+
 void troca(int *maior, int *menor)
 {
 	int temp;
@@ -16,8 +21,8 @@ void comparacao(int n1, int n2, int n3, int n4, int n5)
 {
 	if (n1 < n2 && n2 < n3 && n3 < n4 && n4 < n5)
 	{
-		printf("%d %d %d %d %d\n", n1, n2, n3, n4, n5);
-		
+		imprimir(n1, n2, n3, n4, n5);
+
 		return;
 	}
 
@@ -32,13 +37,20 @@ void comparacao(int n1, int n2, int n3, int n4, int n5)
 }
 
 
-int main()
+int ler()
 {
 	int num1, num2, num3, num4, num5;
 
 	scanf("%d %d %d %d %d", &num1, &num2, &num3, &num4, &num5);
 
 	comparacao(num1, num2, num3, num4, num5);
+
+	return 0;
+}
+
+int main()
+{
+	ler();
 
 	return 0;
 }
