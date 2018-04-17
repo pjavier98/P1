@@ -1,44 +1,61 @@
 #include <stdio.h>
 #include <stdlib.h>
-void compare(int quant_fig, int fig[], int cont_par, int cont_impar, int i, int cont_soma_par, int cont_soma_impar)
+
+void repetir(int fig[], int i, int j)
 {
-	if (i == quant_fig)
+	if (i == j)
 	{
-		printf("%d\n", cont_par);
+		return fig[i];
+	}
 
-		printf("%d\n", cont_impar);
+	if (fig[i] == fig [j])
+	{
+		return 0;
+	}
 
-		if (cont_soma_par > cont_soma_impar)
-		{
-			printf("%d\n", cont_soma_par);
-		}
+	repetir(fig, i, j + 1);
+}
 
-		else
-		{
-			printf("%d\n", cont_soma_impar);
-		}
+void comparar(int fig[], int quant, int i, int cont_par, int soma_par, int cont_impar
+	, int soma_impar)
+{
+	if (quant == i)
+	{
+	    printf("%d\n%d\n", cont_par, cont_impar);
+	    
+	    if (soma_par > soma_impar)
+	    {
+	    	printf("%d\n", soma_par);
+	    }
 
+	    else
+	    {
+	    	printf("%d\n", soma_impar);
+	    }
 		return;
 	}
 
 	if (fig[i] % 2 == 0)
 	{
-		cont_soma_par += fig[i];
 		cont_par += 1;
+		
+		soma_par += repetir(fig, i, 0);
 	}
 
-	else
+	if (fig[i] % 2 != 0)
 	{
-		cont_soma_impar += fig[i];
 		cont_impar += 1;
+		
+		soma_impar += repetir(fig, i, 0);
 	}
 
-	compare(quant_fig, fig, cont_par, cont_impar, i + 1, cont_soma_par, cont_soma_impar);
+	
+	comparar(fig, quant, i + 1, cont_par, soma_par, cont_impar, soma_impar);
 }
 
-void leitura(int figurinhas[], int quant_fig, int i)
+void leitura(int figurinhas[], int quant, int i)
 {
-	if (i == quant_fig)
+	if (quant == i)
 	{
 		return;
 	}
@@ -48,20 +65,20 @@ void leitura(int figurinhas[], int quant_fig, int i)
 		scanf("%d", &figurinhas[i]);
 	}
 
-	leitura(figurinhas, quant_fig, i + 1);
+	leitura(figurinhas, quant, i + 1);
 }
 
 int main()
 {
-    int quantidade_fig;
-    
-    scanf("%d", &quantidade_fig);
-    
-	int *figurinhas = malloc(quantidade_fig * sizeof(int));
+	int quantidade;
 
-	leitura(figurinhas, quantidade_fig, 0);
-	
-	compare(quantidade_fig, figurinhas, 0, 0, 0, 0, 0);
+	scanf("%d", &quantidade);
+
+	int *figurinhas = malloc(quantidade * sizeof(int));
+
+	leitura(figurinhas, quantidade, 0);
+
+	comparar(figurinhas, quantidade, 0, 0, 0, 0, 0);
 
 	return 0;
 }
