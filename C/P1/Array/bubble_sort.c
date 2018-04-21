@@ -8,10 +8,7 @@ void imprimir(int quantidade, int num[], int i)
         return;
     }
     
-    else
-    {
-        printf("%d", num[i]);
-    }
+    printf("%d", num[i]);
     
     imprimir(quantidade, num, i + 1);
 }
@@ -43,6 +40,8 @@ void comparar(int quantidade, int num[], int i, int j)
 		}
 
 		comparar(quantidade, num, i, j + 1);
+		
+		return;
 	}
 
 	
