@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Equação do Segundo Grau</title>
+</head>
+<script>
+	function equação()
+	{
+		alert("A equação do segundo grau se configura na forma: ax^2 + bx + c")
+		a = parseInt(prompt("Digite o valor do coeficiente a"))
+		b = parseInt(prompt("Digite o valor do coeficiente b"))
+		c = parseInt(prompt("Digite o valor do coeficiente c"))
+
+		delta = parseFloat((b * b) - (4 * a * c))
+		alert("Delta = "+delta)
+
+		raiz1 = parseFloat((-b + delta) / (2 * a))
+		raiz2 = parseFloat((-b - delta) / (2 * a))
+
+		if (delta > 0)
+		{
+			alert("Tem dois raizes reais: "+raiz1+" e "+raiz2)
+			
+		}
+
+		else if (delta < 0)
+		{
+			alert("Nao possui raizes reais")
+			
+		}
+
+		else
+		{
+			alert("Tem apenas uma raiz real: "+raiz1)
+		}
+	}
+</script>
+<body>
+	<input type="button" value="Calcular raizes" onclick="equação()">
+
+	<p>O matemático Bhaskara Akaria viveu no século XII, na India.<br>Ele se destacou como o último grande matemático medieval.<br>O principal estudo de Bhaskara é utilizado até hoje e ensinado<br> aos adolescentes em idade escolar,a chamada fórmula<br> de Bhaskara é utilizada para resolver equações de 2° grau.</p>
+	<p> Referencia </p>
+	<a href ="https://www.grupoescolar.com/pesquisa/a-formula-de-bhaskara.html"> https://www.grupoescolar.com/pesquisa/a-formula-de-bhaskara.html</a>
+	
+
+	<p><b> Importância da fórmula de Bhaskara :</b></p>
+
+A fórmula de Bhaskara é usada, principalmente,<br> para resolver equações quadráticas de fórmula geral ax² + bx + c = 0, com coeficientes reais,<br> com a ≠ 0. É através desta fórmula que podemos deduzir uma expressão para a soma (S)<br> e o produto (P) das raízes da equação do 2º grau.
+
+Essa fórmula é muito importante,<br> pois nos permite resolver qualquer problema que envolva equações quadráticas,<br> os quais aparecem em várias situações, como por exemplo, na Física.</p>
+
+	<a href ="http://culturanerdegeek.com.br/observador-quantico-3-formula-de-bhaskara-para-quem/"> foto de Bhaskara</a>
+</body>
+</html>

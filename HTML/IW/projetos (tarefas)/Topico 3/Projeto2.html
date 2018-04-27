@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Triangulos</title>
+</head>
+<script>
+	function triangulos()
+	{
+		lado_1 = parseInt(prompt("Insira o primeiro lado do triangulo:",""))
+		lado_2 = parseInt(prompt("Insira o segundo lado do triangulo:",""))
+		lado_3 = parseInt(prompt("Insira o terceiro lado do triangulo:",""))
+
+		if (lado_1 < lado_3)
+		{
+			temp = lado_3
+			lado_3 = lado_1
+			lado_1 = temp
+		}
+		
+		if (lado_1 < lado_2)
+		{
+			temp = lado_2
+			lado_2 = lado_1
+			lado_1 = temp
+		}
+
+		if (lado_2 < lado_3)
+		{
+			temp = lado_3
+			lado_3 = lado_2
+			lado_2 = temp
+		}
+
+		if (lado_1 > lado_2 + lado_3)
+		{
+			alert("Nenhum triangulo pode ser formado")
+		}
+
+		else if ((lado_1 * lado_1) == (lado_2 * lado_2) + (lado_3 * lado_3))
+		{
+			alert("O triangulo é retangulo")
+		}	
+
+		else if ((lado_1 * lado_1) > (lado_2 * lado_2) + (lado_3 * lado_3))
+		{
+			alert("O triangulo é obtusangulo")
+		}
+
+		else if ((lado_1 * lado_1) < (lado_2 * lado_2) + (lado_3 * lado_3))
+		{
+			alert("O triangulo é acutangulo")
+		}
+	}
+</script>
+<body>
+	<input type="button" value="Verificar o tipo de triangulo" onclick="triangulos()">
+</body>
+</html>

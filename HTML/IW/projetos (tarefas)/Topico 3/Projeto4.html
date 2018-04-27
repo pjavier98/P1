@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title> Media de três alunos</title>
+</head>
+<script>
+	function media_alunos()
+	{
+		document.write("<h1>Curso: Ciência da Computação</h1><h2>Matéria:Internet e Web</h2><h3>Media das notas dos alunos</h3><h3>Professor responsável: Dr.Fábio Paraguaçu</h3>")
+		i = parseInt(1)
+
+		while(i <= 10)
+		{
+			aluno = prompt("Digite seu nome:","")
+			matricula = parseInt(prompt("Digite seu numero de matricula:",""))
+			periodo = prompt("Insira seu periodo:","")
+
+			glosario_1 = parseFloat(prompt("Insira a nota do glosario 1:",""))
+			media_tarefas_1 = parseFloat(prompt("Insira a nota da media de tarefas 1:",""))
+			semana_1 = parseFloat((glosario_1 * 0.2) + (media_tarefas_1 * 0.8))
+
+			glosario_2 = parseFloat(prompt("Insira a nota do glosario 2:",""))
+			media_tarefas_2 = parseFloat(prompt("Insira a nota da media de tarefas 2:",""))
+			semana_2 = parseFloat((glosario_2 * 0.2) + (media_tarefas_2 * 0.8))
+
+			media_tarefas_3 = parseFloat(prompt("Insira a nota da media de tarefas 3:",""))
+			semana_3 = parseFloat(media_tarefas_3)
+
+			media_tarefas_4 = parseFloat(prompt("Insira a nota da media de tarefas 4:",""))
+			semana_4 = parseFloat(media_tarefas_4)
+
+			projeto_final = parseFloat(prompt("Insira a nota do projeto final",""))
+
+
+			nota_1 = parseFloat((semana_1 + semana_2 + semana_3 + semana_4) / 4)
+			nota_2 = parseFloat(projeto_final)
+
+			nota_final = parseFloat((nota_1 + nota_2) / 2)
+
+			if (nota_final >= 7)
+			{
+				document.write("Nome: "+aluno+"<br>Matricula: "+matricula+"<br>Periodo:"+periodo+"<br>Nota 1:"+nota_1+"<br>Nota 2: "+nota_2+"<br>Voce foi aprovado nesta materia com media: "+nota_final)
+			}
+
+			else if (nota_final == 5)
+			{
+				document.write("Nome: "+aluno+"<br>Matricula: "+matricula+"<br>Periodo: "+periodo+"<br><br>Nota 1: "+nota_1+"<br>Nota 2: "+nota_2+"<br>Voce vai para a prova final com media: "+nota_final)
+			}
+
+			else if (nota_final > 5 && nota_final < 7)
+			{
+				document.write("Nome: "+aluno+"<br>Matricula: "+matricula+"<br>Periodo: "+periodo+"<br><br>Nota 1: "+nota_1+"<br>Nota 2: "+nota_2+"<br>Voce vai para a reavaliação com media: "+nota_final)
+			}
+
+			else
+			{
+				document.write("Nome: "+aluno+"<br>Matricula: "+matricula+"<br>Periodo: "+periodo+"<br>Nota 1: "+nota_1+"<br>Nota 2: "+nota_2+"<br>Voce foi reprovado com media: "+nota_final)
+			}
+			document.write("<br><br>")
+			i = i + 1
+		}
+	}
+</script>
+<body>
+	<h1>Curso: Ciência da Computação</h1>
+	<h2>Matéria: Internet e Web</h2>
+	<h3>Media das notas dos alunos</h3>
+	<h3>Professor responsável: Dr. Fábio Paraguaçu</h3>
+	<form>
+		<input type="button" name="media" value="media de 10 alunos"
+		onclick="media_alunos()">
+	</form>
+</body>
+</html>
