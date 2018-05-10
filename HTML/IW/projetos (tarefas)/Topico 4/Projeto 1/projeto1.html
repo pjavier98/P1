@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Calculadora de erros</title>
+</head>
+<script>
+	function calcular() 
+	{
+		semanas = parseInt(prompt("Digite a quantidade de semanas:",""))
+		projetos_semana = parseInt(prompt("Digite a quantidade de projetos por semana:",""))
+		projetos = semanas * projetos_semana;
+
+		i = 0
+		j = 1
+		quantidade_erros = 0
+
+		for(i = 0; i < projetos; i++)
+		{
+			quantidade_erros = Math.pow(2, i)
+
+			if (i == projetos - 1)
+			{
+				alert("Quantidade de erros no projeto final sera de "+quantidade_erros)
+				document.write("Projeto Final: "+j+";		Erros: "+quantidade_erros+"<br>")
+			}
+
+			else
+			{
+				alert("Quantidade de erros no projeto "+j+" de "+
+					quantidade_erros)
+
+				document.write("Projeto: "+j+";		Erros: "+quantidade_erros+"<br>")
+			}
+
+			j++;
+		}	
+	}
+</script>
+<body>
+	<form>
+		<input type="button" value="Calcula erros Javascript" onclick="calcular()">
+	</form>
+</body>
+</html>
