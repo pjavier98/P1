@@ -1,86 +1,131 @@
 #include <stdio.h>
 
-void percorrer(int linhas, int colunas, int i, int j, char matriz[linhas][colunas], int cont, int *maior)
+void print(int linhas, int array[linhas], int i)
 {
-    if (matriz[i][j] == '#' || i < 0 || j < 0 || i >= linhas || j >= colunas)
+    if (linhas == i)
     {
-        if (cont > *maior)
-        {
-            *maior = cont;
-        }
-        
-    	return;
+        return;
     }
+    
+    if (array[i] != -1)
+    {
+        if (array[i - 1] != array[i])
+        {
+            printf("%d\n", array[i]);
+        }
+    }
+    
+    print(linhas, array, i + 1);
+}
 
-    else
-    {
-        
-        if (matriz[i][j] == 'd')
-        {
-            cont += 50;
-        }
-        
-        else if (matriz[i][j] == 'o')
-        {
-            cont += 10;
-        }
-        
-        else if (matriz[i][j] == 'p')
-        {
-            cont += 5;
-        }
-        
-        else if (matriz[i][j] == 'b')
-        {
-            cont += 1;
-        }
-        
-        char salvar = matriz[i][j]; // salva o conteudo da posicao atual
-        matriz[i][j] = '#'; // trava a posicao atual, marcando que ja passou por ali
-        percorrer(linhas, colunas, i - 1, j, matriz, cont, maior);
-        percorrer(linhas, colunas, i + 1, j, matriz, cont, maior);
-        percorrer(linhas, colunas, i, j - 1, matriz, cont, maior);
-        percorrer(linhas, colunas, i, j + 1, matriz, cont, maior);
-        
-        matriz[i][j] = salvar; // devolve a posicao atual seu conteudo anterior para conseguir percorrer dnv
+void troca(int *a, int *b)
+{
+	int temp;
+
+	if (*a > *b)
+	{
+		temp = *a;
+		*a = *b;
+		*b = temp;
+	}
+}
+
+void ordenar(int quantidade, int cont[quantidade], int i, int j)
+{
+	if (quantidade == i)
+	{
+	    return;
+	}
+
+	if (j < quantidade)
+	{
+		if (cont[i] > cont[j])
+		{
+			troca(&cont[i], &cont[j]);
+		}
+
+		ordenar(quantidade, cont, i, j + 1);
+		
+		return;
+	}
+	
+	ordenar(quantidade, cont, i + 1, j = i + 1);
+}
+
+void comparar(int linhas, int atual, int arvore[linhas][2], int cont, int array[linhas])
+{
+    if (arvore[atual][0] == -1 && arvore[atual][1] == -1)
+    { 
+        array[atual] = cont;
     }
+    
+    if (atual == -1)
+    {
+        return;
+    }
+    
+    if (arvore[atual][0] != -1 || arvore[atual][1] != -1)
+    {
+        cont = atual;
+    }
+    
+    comparar(linhas, arvore[atual][0], arvore, cont, array);
+        
+    comparar(linhas, arvore[atual][1], arvore, cont, array);
+    
+}
+
+void ler(int linhas, int arvore[linhas][2], int i, int j)
+{
+	if (linhas == i)
+	{
+		return;
+	}
+
+	else
+	{
+		if (j == 2)
+		{
+			return ler(linhas, arvore, i + 1, 0);
+		}
+
+		scanf("%d", &arvore[i][j]);
+		
+		ler(linhas, arvore, i, j + 1);
+	}
+}
+
+void zerar(int tamanho, int array[tamanho], int i)
+{
+    if (i == tamanho)
+    {
+        return;
+    }
+    
+    array[i] = -1;
+    
+    zerar(tamanho, array, i + 1);
 }
 
 int main()
 {
-	int linhas, colunas, i, j;
+	int linhas;
 
-	scanf("%d %d", &linhas, &colunas);
-	//printf("%d %d\n", linhas, colunas);
+	scanf("%d", &linhas);
 
-	char matriz[linhas][colunas];
-
-	for (i = 0; i < linhas; i += 1)
-	{
-		for (j = 0; j < colunas; j += 1)
-		{
-			scanf(" %c", &matriz[i][j]);
-		}
-	}
-
-	/*for (i = 0; i < linhas; i += 1)
-	{
-		if (i != 0)
-		{
-			printf("\n");
-		}
-		
-		for (j = 0; j < colunas; j += 1)
-		{
-			printf("%c", matriz[i][j]);
-		}
-	}*/
-	
-	int maior = 0;
+	int arvore[linhas][2];
+   
+    int array[linhas];
     
-	percorrer (linhas, colunas, 0, 0, matriz, 0, &maior);
+	ler(linhas, arvore, 0, 0);
 	
-	printf("%d\n", maior);
+	zerar(linhas, array, 0);
+	
+	comparar(linhas, 0, arvore, 0, array);
 
+	ordenar(linhas, array, 0, 0);
+	
+	print(linhas, array, 0);
+	
 	return 0;
 }
